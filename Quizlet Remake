@@ -46,7 +46,6 @@ public class MakeshiftQuizlet {
             if(changeWord.equalsIgnoreCase("Y")) {
                 do {
                     System.out.println("Would you like to change a word or definition? word/definition");
-                    System.out.println("If you would like to finish using the program, type 'done'.");
                     wordOrDef = sc.next();
                     if(wordOrDef.equalsIgnoreCase("Word")) {
                         System.out.println("Which word will you change? #");
