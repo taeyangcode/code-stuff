@@ -3,12 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class JFramePractice {
-    
     JFrame window;
     
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel;
+    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel;
     
-    JLabel titleNameLabel;
+    JLabel titleNameLabel, hpLabel, hpLabelNumber, weaponLabel, weaponLabelNumber, weaponLabelName;
     
     JButton startButton, choice1, choice2, choice3, choice4;
     
@@ -20,6 +19,9 @@ public class JFramePractice {
     TitleScreenHandler tsHandler = new TitleScreenHandler();
     
     Container cont;
+    
+    int playerHP;
+    String weapon;
     
     public static void main(String args[]) {
         new JFramePractice();
@@ -107,6 +109,41 @@ public class JFramePractice {
         choiceButtonPanel.add(choice2);
         choiceButtonPanel.add(choice3);
         choiceButtonPanel.add(choice4);
+        
+        playerPanel = new JPanel();
+        playerPanel.setBounds(100, 15, 600, 50);
+        playerPanel.setBackground(Color.white);
+        playerPanel.setLayout(new GridLayout(1, 4));
+        cont.add(playerPanel);
+        
+        hpLabel = new JLabel("HP:");
+        hpLabel.setFont(normalText);
+        hpLabel.setForeground(Color.black);
+        playerPanel.add(hpLabel);
+        hpLabelNumber = new JLabel();
+        hpLabelNumber.setFont(normalText);
+        hpLabelNumber.setForeground(Color.black);
+        playerPanel.add(hpLabelNumber);
+        
+        weaponLabel = new JLabel("Weapon:");
+        weaponLabel.setFont(normalText);
+        weaponLabel.setForeground(Color.black);
+        playerPanel.add(weaponLabel);
+        weaponLabelName = new JLabel();
+        weaponLabelName.setFont(normalText);
+        weaponLabelName.setForeground(Color.black);
+        playerPanel.add(weaponLabelName);
+        
+        playerSetup();
+    }
+    
+    public void playerSetup() {
+        playerHP = 15;
+        weapon = "Knife";
+        weaponLabelName.setText(weapon);
+        hpLabelNumber.setText("" + playerHP);
+        
+        
     }
     
     public class TitleScreenHandler implements ActionListener {
