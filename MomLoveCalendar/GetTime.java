@@ -21,10 +21,6 @@ public class GetTime {
         }
     }
 
-    int apple() {
-        return 5;
-    }
-
     int getMonth() {
         Date date = new Date();
 
