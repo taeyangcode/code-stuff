@@ -1,5 +1,5 @@
 /*
-Answer without recursion:
+Answer with recursion:
 */
 
 public class HiddenWord {
@@ -19,13 +19,13 @@ public class HiddenWord {
 }
 
 /*
-Answer with recursion:
+Answer without recursion:
 */
 
 public class HiddenWord {
     private String answer;
     
-    public HiddenWord2(String answer) {
+    public HiddenWord(String answer) {
         this.answer = answer;
     }
     
